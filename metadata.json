@@ -3,5 +3,5 @@
     "name": "Support Chatbot LLM",
     "description": "Model representing a chatbot for customer support",
     "modelMethodology": "LLM",
-    "modelType": "VENDOR"
+    "type": "VENDOR"
 }
