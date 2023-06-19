@@ -1,0 +1,7 @@
+{
+    "tags": [],
+    "name": "NLP Analysis",
+    "description": "Model that provides analysis of a given data file with NLP tools",
+    "modelCategory": "MODEL_MONITORING_MODEL",
+    "frequentlyUsed": true
+}
