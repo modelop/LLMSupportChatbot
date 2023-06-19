@@ -1,7 +1,7 @@
 {
     "tags": [],
-    "name": "NLP Analysis",
-    "description": "Model that provides analysis of a given data file with NLP tools",
-    "modelCategory": "MODEL_MONITORING_MODEL",
-    "frequentlyUsed": true
+    "name": "Support Chatbot LLM",
+    "description": "Model representing a chatbot for customer support",
+    "modelMethodology": "LLM",
+    "modelType": "VENDOR"
 }
