@@ -1,7 +1,6 @@
 import json
-from langchain import PromptTemplate
-from langchain.chains import LLMChain, SimpleSequentialChain, SequentialChain  # import LangChain libraries
-from langchain.llms import OpenAI  # import OpenAI model
+from langchain.chains import LLMChain, SequentialChain
+from langchain.llms import OpenAI
 from langchain.prompts import load_prompt
 
 def answer_question(question: str):
