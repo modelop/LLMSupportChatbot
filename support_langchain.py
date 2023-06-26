@@ -44,6 +44,7 @@ def action(data: dict):
 	yield {'facts': result['facts'], 'answer': result['answer']}
 
 
+# modelop.metrics
 def metrics(data: pd.DataFrame):
 	results = {"Questions, Facts, and Answers": []}
 	for index, row in data.iterrows():
