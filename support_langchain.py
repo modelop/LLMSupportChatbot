@@ -1,8 +1,10 @@
 import json
 import pandas as pd
-from langchain.chains import LLMChain, SequentialChain
-from langchain.llms import OpenAI
+from langchain import PromptTemplate
+from langchain.chains import LLMChain, SequentialChain  # import LangChain libraries
+from langchain.llms import OpenAI  # import OpenAI model
 from langchain.prompts import load_prompt
+
 
 def answer_question(question: str):
 	llm = OpenAI(temperature=0.7)
@@ -42,20 +44,24 @@ def action(data: dict):
 	yield {'facts': result['facts'], 'answer': result['answer']}
 
 
-# modelop.metrics
 def metrics(data: pd.DataFrame):
+	results = {"Questions, Facts, and Answers": []}
 	for index, row in data.iterrows():
 		llm = OpenAI(temperature=0.7)
 		questions = llm.predict(row['prompt'])
 		for question in iter(questions.splitlines()):
 			result = next(action({'question': question}))
+			results["Questions, Facts, and Answers"].append(
+				{"question": question, "answer": result["answer"], "facts": result["facts"]})
+
+	yield results
 
 
 def main():
 	# generate_prompt_files()
 	print(json.dumps(next(action({'question': 'What was the town of tomichi in colorado like?'})), indent=2))
-	metrics(pd.DataFrame.from_dict([
-		{'prompt': 'generate a list of random financial questions without line numbers and one per line'}]))
+	print(json.dumps(next(metrics(pd.DataFrame.from_dict([
+		{'prompt': 'generate a list of random financial questions without line numbers and one per line'}]))), indent=2))
 
 
 if __name__ == '__main__':
