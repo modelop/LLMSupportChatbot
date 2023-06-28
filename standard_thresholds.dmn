@@ -68,7 +68,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1q4o95x">
-          <text>!invalidFiles</text>
+          <text>!=false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1db5oho">
           <text>false</text>
